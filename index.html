@@ -122,20 +122,35 @@
             }
         });
 
+
         function checkPassword() {
             const password = document.getElementById('password-input').value;
-            const correctPassword = "secretcode123"; // 여기에 원하는 암호를 설정하세요
+      
+            const correctHash = "5887d2efdc1441f80ff1ea9cf46c64b4f01257c0a1e892b31fb0522323c93f91";
             
-            if (password === correctPassword) {
-                // 암호가 맞으면 다음 페이지로 이동
-                window.location.href = "second-page.html";
-            } else {
-                // 암호가 틀리면 오류 메시지 표시
-                document.getElementById('error-message').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('error-message').style.display = 'none';
-                }, 3000);
+         
+            function sha256(str) {
+           
+                let buffer = new TextEncoder().encode(str);
+                return crypto.subtle.digest('SHA-256', buffer).then(hash => {
+                    return Array.from(new Uint8Array(hash))
+                        .map(b => b.toString(16).padStart(2, '0'))
+                        .join('');
+                });
             }
+            
+            sha256(password).then(hash => {
+                if (hash === correctHash) {
+                    // 암호가 맞으면 다음 페이지로 이동
+                    window.location.href = "second-page.html";
+                } else {
+                    // 암호가 틀리면 오류 메시지 표시
+                    document.getElementById('error-message').style.display = 'block';
+                    setTimeout(() => {
+                        document.getElementById('error-message').style.display = 'none';
+                    }, 3000);
+                }
+            });
         }
     </script>
 </body>

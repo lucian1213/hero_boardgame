@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀 페이지</title>
+    <!-- Google Fonts - Montserrat 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
@@ -42,16 +44,17 @@
             }
         }
         
-        /* 기본 설정 (PC용) */
         .password-area {
             position: absolute;
-            left: 60%;
+            left: 62%;
             top: 62%; /* PC에서는 아래쪽에 위치 */
             transform: translate(-50%, -50%);
             background-color: transparent;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            color: white; /* 글자 색상을 흰색으로 변경 */
+            font-family: 'Montserrat', 'Arial', sans-serif; /* 폰트 변경 */
         }
         
         /* 모바일 화면에서의 위치 설정 */
@@ -71,7 +74,8 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.3);
-            color: #333;
+            color: white; /* 입력 텍스트 색상을 흰색으로 변경 */
+            font-family: 'Montserrat', 'Arial', sans-serif; /* 폰트 변경 */
         }
         
         #submit-btn {
@@ -102,8 +106,7 @@
         
         <!-- 암호 입력 영역 -->
         <div class="password-area">
-            <h2>비밀 페이지</h2>
-            <p>다음 단계로 넘어가려면 암호를 입력하세요</p>
+            <p>제공된 암호를 입력하세요</p>
             <input type="password" id="password-input" placeholder="암호를 입력하세요">
             <button id="submit-btn">확인</button>
             <p id="error-message">잘못된 암호입니다. 다시 시도해주세요.</p>

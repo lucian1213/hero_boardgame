@@ -42,18 +42,24 @@
             }
         }
         
+        /* 기본 설정 (PC용) */
         .password-area {
             position: absolute;
-            /* 위치 조정: left, top 값을 변경하여 위치 조정 가능 */
-            /* 왼쪽에서 50%, 위에서 70% 위치에 배치 */
-            left: 70%;
-            top: 60%; 
+            left: 60%;
+            top: 62%; /* PC에서는 아래쪽에 위치 */
             transform: translate(-50%, -50%);
-            /* 배경색을 투명하게 변경 */
             background-color: transparent;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+        }
+        
+        /* 모바일 화면에서의 위치 설정 */
+        @media (max-width: 768px) {
+            .password-area {
+                top: 85%; /* 모바일에서는 더 아래쪽에 위치 */
+                width: 90%; /* 모바일에서는 너비를 더 넓게 */
+            }
         }
         
         /* 입력 필드와 버튼 스타일 조정 */
@@ -91,7 +97,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- 배경 이미지 (GitHub에 업로드 후 실제 이미지 경로로 변경해주세요) -->
+        <!-- 배경 이미지 -->
         <img class="background-image" src="main2.png" alt="배경 이미지">
         
         <!-- 암호 입력 영역 -->

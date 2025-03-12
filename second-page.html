@@ -41,10 +41,14 @@
             font-size: 50px;
             margin: 20px 0;
         }
+        
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div class="success-container">
+    <div id="content" class="hidden success-container">
         <div class="celebration">🎉</div>
         <h1>암호가 확인되었습니다!</h1>
         <p>축하합니다! 성공적으로 암호를 입력하셨습니다.</p>
@@ -53,5 +57,26 @@
         
         <!-- 여기에 추가 콘텐츠를 넣을 수 있습니다 -->
     </div>
+    
+    <div id="unauthorized" class="success-container">
+        <h1 style="color: #de1b23;">접근 제한됨</h1>
+        <p>이 페이지는 올바른 경로로 접근해야 합니다.</p>
+        <p><a href="index.html">메인 페이지로 돌아가기</a></p>
+    </div>
+
+    <script>
+        // 세션 스토리지에서 인증 상태 확인
+        window.onload = function() {
+            if (sessionStorage.getItem('authenticated') === 'true') {
+                // 인증된 상태라면 콘텐츠 표시
+                document.getElementById('content').classList.remove('hidden');
+                document.getElementById('unauthorized').classList.add('hidden');
+            } else {
+                // 인증되지 않은 상태라면 경고 메시지 표시
+                document.getElementById('content').classList.add('hidden');
+                document.getElementById('unauthorized').classList.remove('hidden');
+            }
+        };
+    </script>
 </body>
 </html>

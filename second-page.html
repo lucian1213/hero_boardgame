@@ -84,6 +84,37 @@
         .buy-button:hover {
             background-color: #02a94b;
         }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .badge.new {
+            background-color: #ff4757;
+            color: white;
+        }
+        
+        .badge.sale {
+            background-color: #ffa502;
+            color: white;
+        }
+        
+        .badge.hot {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .badge.best {
+            background-color: #5f27cd;
+            color: white;
+        }
         
         .hidden {
             display: none;
@@ -117,6 +148,7 @@
         <div class="products">
             <!-- 상품 0 -->
             <div class="product">
+                <div class="badge new">NEW</div>
                 <img src="thief.png" alt="딜레마">
                 <h2>어느 괴도의 딜레마</h2>
                 <p>2인용</p>

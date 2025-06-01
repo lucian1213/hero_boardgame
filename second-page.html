@@ -47,7 +47,6 @@
             flex-direction: column;
             align-items: center;
             min-height: 400px; /* 최소 높이 설정으로 충분한 공간 확보 */
-            position: relative;
         }
         
         .product img {
@@ -61,7 +60,6 @@
         
         .product h2 {
             font-size: 1.5rem;
-            margin-bottom: 10px;
             text-align: center;
         }
         
@@ -85,16 +83,24 @@
         .buy-button:hover {
             background-color: #02a94b;
         }
-
+        
+        /* 제목 컨테이너 스타일 */
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        /* 배지 스타일 */
         .badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
             font-weight: bold;
-            z-index: 10;
+            white-space: nowrap;
         }
         
         .badge.new {
@@ -139,6 +145,11 @@
             .product {
                 margin-bottom: 20px;
             }
+            
+            .badge {
+                font-size: 0.6rem;
+                padding: 3px 6px;
+            }
         }
     </style>
 </head>
@@ -149,9 +160,11 @@
         <div class="products">
             <!-- 상품 0 -->
             <div class="product">
-                <div class="badge new">NEW</div>
                 <img src="thief.png" alt="딜레마">
-                <h2>어느 괴도의 딜레마</h2>
+                <div class="title-container">
+                    <h2>어느 괴도의 딜레마</h2>
+                    <div class="badge new">NEW</div>
+                </div>
                 <p>2인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11908598725" class="buy-button">구매하러 가기</a>
@@ -160,7 +173,9 @@
             <!-- 상품 1 -->
             <div class="product">
                 <img src="dark.png" alt="암행">
-                <h2>[협력추리]암행</h2>
+                <div class="title-container">
+                    <h2>[협력추리]암행</h2>
+                </div>
                 <p>1~4인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11692194798" class="buy-button">구매하러 가기</a>
@@ -169,7 +184,9 @@
             <!-- 상품 2 -->
             <div class="product">
                 <img src="godess.png" alt="운명의 세여신">
-                <h2>운명의 세여신 3부작</h2>
+                <div class="title-container">
+                    <h2>운명의 세여신 3부작</h2>
+                </div>
                 <p>4인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583010322" class="buy-button">구매하러 가기</a>
@@ -178,7 +195,10 @@
             <!-- 상품 3 -->
             <div class="product">
                 <img src="curse.png" alt="무녀마을">
-                <h2>무녀마을 : 금기의저주</h2>
+                <div class="title-container">
+                    <h2>무녀마을 : 금기의저주</h2>
+                    <div class="badge hot">인기</div>
+                </div>
                 <p>6인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583032998" class="buy-button">구매하러 가기</a>
@@ -187,7 +207,10 @@
             <!-- 상품 4 -->
             <div class="product">
                 <img src="live.png" alt="살인라이브">
-                <h2>살인라이브</h2>
+                <div class="title-container">
+                    <div class="badge sale">세일중</div>
+                    <h2>살인라이브</h2>
+                </div>
                 <p>5인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583046713" class="buy-button">구매하러 가기</a>
@@ -196,7 +219,10 @@
             <!-- 상품 5 -->
             <div class="product">
                 <img src="normal.png" alt="보통의머더미스터리">
-                <h2>보통의 머더미스터리</h2>
+                <div class="title-container">
+                    <h2>보통의 머더미스터리</h2>
+                    <div class="badge sale">세일중</div>
+                </div>
                 <p>5인용</p>
                 <p>난이도 : 1/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583058472" class="buy-button">구매하러 가기</a>
@@ -205,7 +231,9 @@
             <!-- 상품 6 -->
             <div class="product">
                 <img src="potato.png" alt="감자의 꿈">
-                <h2>감자의 꿈</h2>
+                <div class="title-container">
+                    <h2>감자의 꿈</h2>
+                </div>
                 <p>5인용</p>
                 <p>난이도 : 3/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583066576" class="buy-button">구매하러 가기</a>
@@ -214,7 +242,9 @@
             <!-- 상품 7 -->
             <div class="product">
                 <img src="aida.png" alt="에이다">
-                <h2>에이다</h2>
+                <div class="title-container">
+                    <h2>에이다</h2>
+                </div>
                 <p>5인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583236352" class="buy-button">구매하러 가기</a>
@@ -223,7 +253,9 @@
              <!-- 상품 8 -->
             <div class="product">
                 <img src="memorise.png" alt="메모리즈 3부작">
-                <h2>메모리즈 3부작</h2>
+                <div class="title-container">
+                    <h2>메모리즈 3부작</h2>
+                </div>
                 <p>5인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11583244278" class="buy-button">구매하러 가기</a>
@@ -232,7 +264,9 @@
              <!-- 상품 9 -->
             <div class="product">
                 <img src="shadow.png" alt="그림자찾기">
-                <h2>그림자찾기</h2>
+                <div class="title-container">
+                    <h2>그림자찾기</h2>
+                </div>
                 <p>6인용</p>
                 <p>난이도 : 4/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11585937426" class="buy-button">구매하러 가기</a>
@@ -241,7 +275,9 @@
              <!-- 상품 10 -->
             <div class="product">
                 <img src="dead.png" alt="데드박스">
-                <h2>데드박스</h2>
+                <div class="title-container">
+                    <h2>데드박스</h2>
+                </div>
                 <p>2인용</p>
                 <p>난이도 : 2/5</p>
                 <a href="https://smartstore.naver.com/mysterygames/products/11585945775" class="buy-button">구매하러 가기</a>
